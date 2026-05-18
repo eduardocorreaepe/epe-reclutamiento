@@ -160,43 +160,94 @@ st.markdown("""
 [data-testid="stAppViewContainer"] { background: #F0F4FA; }
 [data-testid="stHeader"] { background: transparent; }
 
-/* ── FORZAR TEMA CLARO EN TODOS LOS COMPONENTES ── */
-/* Labels de inputs, selects, date pickers */
-[data-testid="stWidgetLabel"] p,
-[data-testid="stWidgetLabel"] label,
-label, .stTextInput label, .stSelectbox label,
-.stDateInput label, .stRadio label,
-.stTextArea label {
+/* ══ FORZAR TEMA CLARO — TODOS LOS COMPONENTES ══ */
+
+/* Fondo blanco universal para inputs, selects y date */
+input, textarea, select,
+[data-baseweb="input"] input,
+[data-baseweb="textarea"] textarea,
+[data-baseweb="select"],
+[data-baseweb="select"] > div,
+[data-baseweb="select"] div[role="button"],
+[data-baseweb="base-input"],
+[data-baseweb="base-input"] input,
+.stTextInput > div > div,
+.stTextInput > div > div > input,
+.stDateInput > div > div,
+.stDateInput > div > div > input,
+.stSelectbox > div > div,
+.stSelectbox > div > div > div {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
     color: #1F2D3D !important;
-    font-weight: 600 !important;
-    font-size: 0.88rem !important;
 }
-/* Opciones de radio buttons (Sí / No) */
-.stRadio [data-testid="stMarkdownContainer"] p,
-.stRadio div[role="radiogroup"] label span,
-.stRadio div label p {
+
+/* Texto dentro de selectbox (valor seleccionado + placeholder) */
+[data-baseweb="select"] span,
+[data-baseweb="select"] div,
+[data-baseweb="select"] p,
+[data-baseweb="select"] [data-testid="stMarkdownContainer"],
+.stSelectbox [data-testid="stMarkdownContainer"] p,
+div[data-baseweb="select"] > div > div,
+div[class*="ValueContainer"] span,
+div[class*="singleValue"],
+div[class*="placeholder"] {
+    background-color: #ffffff !important;
     color: #1F2D3D !important;
-    font-weight: 500 !important;
 }
-/* Inputs text */
-.stTextInput input, .stTextArea textarea {
-    background: white !important;
-    color: #1F2D3D !important;
+
+/* Borde de inputs y selects */
+[data-baseweb="input"],
+[data-baseweb="base-input"],
+[data-baseweb="select"] > div {
     border: 1.5px solid #CBD5E1 !important;
     border-radius: 8px !important;
 }
-/* Selectboxes */
-.stSelectbox div[data-baseweb="select"] {
-    background: white !important;
-}
-.stSelectbox div[data-baseweb="select"] div {
+
+/* Labels de todos los widgets */
+[data-testid="stWidgetLabel"],
+[data-testid="stWidgetLabel"] p,
+[data-testid="stWidgetLabel"] label,
+label, p, span {
     color: #1F2D3D !important;
 }
-/* Date input */
+
+/* Radio buttons — texto de opciones */
+.stRadio label,
+.stRadio label span,
+.stRadio label p,
+.stRadio div[role="radiogroup"] label,
+.stRadio div[role="radiogroup"] label span,
+[role="radiogroup"] label span {
+    color: #1F2D3D !important;
+    font-weight: 500 !important;
+}
+
+/* Dropdown popup del selectbox */
+[data-baseweb="popover"],
+[data-baseweb="menu"],
+[data-baseweb="list"],
+ul[data-baseweb="menu"] {
+    background: #ffffff !important;
+    color: #1F2D3D !important;
+}
+[data-baseweb="menu"] li,
+[data-baseweb="menu"] [role="option"] {
+    background: #ffffff !important;
+    color: #1F2D3D !important;
+}
+[data-baseweb="menu"] li:hover,
+[data-baseweb="menu"] [role="option"]:hover {
+    background: #EAF2FB !important;
+    color: #1F4E79 !important;
+}
+
+/* Date input calendario */
 .stDateInput input {
-    background: white !important;
+    background: #ffffff !important;
     color: #1F2D3D !important;
 }
+
 /* Markdown headers dentro del form */
 .stMarkdown h4 {
     color: #1F4E79 !important;
