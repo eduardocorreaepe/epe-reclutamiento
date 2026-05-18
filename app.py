@@ -160,6 +160,54 @@ st.markdown("""
 [data-testid="stAppViewContainer"] { background: #F0F4FA; }
 [data-testid="stHeader"] { background: transparent; }
 
+/* ── FORZAR TEMA CLARO EN TODOS LOS COMPONENTES ── */
+/* Labels de inputs, selects, date pickers */
+[data-testid="stWidgetLabel"] p,
+[data-testid="stWidgetLabel"] label,
+label, .stTextInput label, .stSelectbox label,
+.stDateInput label, .stRadio label,
+.stTextArea label {
+    color: #1F2D3D !important;
+    font-weight: 600 !important;
+    font-size: 0.88rem !important;
+}
+/* Opciones de radio buttons (Sí / No) */
+.stRadio [data-testid="stMarkdownContainer"] p,
+.stRadio div[role="radiogroup"] label span,
+.stRadio div label p {
+    color: #1F2D3D !important;
+    font-weight: 500 !important;
+}
+/* Inputs text */
+.stTextInput input, .stTextArea textarea {
+    background: white !important;
+    color: #1F2D3D !important;
+    border: 1.5px solid #CBD5E1 !important;
+    border-radius: 8px !important;
+}
+/* Selectboxes */
+.stSelectbox div[data-baseweb="select"] {
+    background: white !important;
+}
+.stSelectbox div[data-baseweb="select"] div {
+    color: #1F2D3D !important;
+}
+/* Date input */
+.stDateInput input {
+    background: white !important;
+    color: #1F2D3D !important;
+}
+/* Markdown headers dentro del form */
+.stMarkdown h4 {
+    color: #1F4E79 !important;
+    font-size: 1rem !important;
+    margin: 18px 0 8px !important;
+}
+/* Caption texto */
+.stCaption, .stCaptionContainer {
+    color: #6B7280 !important;
+}
+
 /* Header principal */
 .epe-header {
     background: linear-gradient(135deg, #1F4E79 0%, #2E75B6 100%);
